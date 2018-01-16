@@ -1,6 +1,6 @@
 // Define variable to hold the value of the array
 var makeRandomQuotes = 0;
-
+var makeQuote;
 
 // Assign quotes to an array of objects
 var quotes = [
@@ -36,20 +36,22 @@ var quotes = [
 				tag:        "Movie: Comedy",   
 			}
 ];
-// event listener to respond to "Show another quote" button clicks
+// Anonymous function used to make random quote from the quotes object.
 function getRandomQuote() {
 	makeRandomQuotes = Math.floor( Math.random() * quotes.length );
-	var makeQuote = quotes[makeRandomQuotes];
+	makeQuote = quotes[makeRandomQuotes];
 	return makeQuote;	
 }
 
 
 function printQuote() { 
+// Assign local variable the getRandomQuote() function when its called.
 	var printMakeQuote = getRandomQuote();
+// If there is a citation property on the quotes property it will display this variable.
 	var getCitation = isThereCitation(printMakeQuote.citation);
+// If there is a year property with a year, it will display this variable.
 	var getYear = isThereYear(printMakeQuote.year);
-	console.log(getYear);
-	
+// Anonymous function to be used if object propery year is in the quote.
 	function isThereYear(objectProp) {	
 		if ( objectProp !== undefined ) {
 			return '<span class="year">' + objectProp + '</span>';			
@@ -57,7 +59,7 @@ function printQuote() {
 			return '';
 		}		
 	}
-
+// Anonymous fuction to be used if object propery citation is in the quote.
 	function isThereCitation(objectProp) {	
 		if ( objectProp !== undefined ) {
 			return '<span class="citation">' + objectProp + '</span>';			
@@ -66,23 +68,9 @@ function printQuote() {
 		}		
 	}
 
+// Return this code to the .addEventListener when the button is clicked
 	document.getElementById('quote-box').innerHTML = '<p class="quote">' + printMakeQuote.quote + '</p>'
-    + '<p class="source">' + printMakeQuote.source + getCitation + getYear + '</p>';
-	
-	
-
-	
-	// !!! These code is commented out because it can create a span tag but could not attach a class into it. !!!
-	// Create a new element and store it in a variable.
-	// var newSpanEl = document.createElement('span');
-	// Create a text node and store it in a variable.
-	// var newCitation = document.createTextNode(printMakeQuote.citation);
-	// Attach the new text node to the new element.
-	// newSpanEl.appendChild(newCitation);
-	// Find the position where the new element should be added.
-	// var position = document.getElementsByClassName('source')[0];
-	// Insert the new element into its position.
-	// position.appendChild(newSpanEl).appendChild('class="citation"');
+    + '<p class="source">' + printMakeQuote.source + getCitation + getYear + '</p>';	
 
 };
 
