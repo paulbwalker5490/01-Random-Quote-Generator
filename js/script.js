@@ -68,12 +68,18 @@ function printQuote() {
 		}		
 	}
 
+ 
 // Return this code to the .addEventListener when the button is clicked
 	document.getElementById('quote-box').innerHTML = '<p class="quote">' + printMakeQuote.quote + '</p>'
     + '<p class="source">' + printMakeQuote.source + getCitation + getYear + '</p>';	
 
 };
 
+
 // when user clicks anywhere on the button, the "printQuote" function is called
  document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+
+// Display different quote every 3 seconds
+setInterval(printQuote, 3000);
 
