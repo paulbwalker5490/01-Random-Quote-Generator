@@ -36,16 +36,20 @@ var quotes = [
 				tag:        "Movie: Comedy",   
 			}
 ];
+
+
 // Anonymous function used to make random quote from the quotes object.
 function getRandomQuote() {
+// Using the Math.random Method to generate the random numbers in the quotes array length 0 to 5.
 	makeRandomQuotes = Math.floor( Math.random() * quotes.length );
+// Assign the global variable and get the number that's generated and the object that's assigned to that number.
 	makeQuote = quotes[makeRandomQuotes];
 	return makeQuote;	
 }
 
 
-function printQuote() { 
-// Assign local variable the getRandomQuote() function when its called.
+function printQuote(setBgColor) { 
+// Assign local variable that getRandomQuote() function when its called.
 	var printMakeQuote = getRandomQuote();
 // If there is a citation property on the quotes property it will display this variable.
 	var getCitation = isThereCitation(printMakeQuote.citation);
@@ -67,12 +71,20 @@ function printQuote() {
 			return '';
 		}		
 	}
-
  
 // Return this code to the .addEventListener when the button is clicked
 	document.getElementById('quote-box').innerHTML = '<p class="quote">' + printMakeQuote.quote + '</p>'
     + '<p class="source">' + printMakeQuote.source + getCitation + getYear + '</p>';	
 
+
+     function bgColor() {
+     	var colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
+    	var getRandomColor = Math.floor( Math.random() * colors.length );
+    	var makeColor = colors[getRandomColor];
+    	return document.body.style.backgroundColor = makeColor;
+    } 
+
+ 	setInterval(bgColor, 5000);
 };
 
 
@@ -81,5 +93,6 @@ function printQuote() {
 
 
 // Display different quote every 3 seconds
-setInterval(printQuote, 3000);
+setInterval(printQuote, 5000);
+
 
