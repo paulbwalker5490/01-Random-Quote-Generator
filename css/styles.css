@@ -89,3 +89,12 @@ body {
     font-size: 1rem;
   }
 }
+
+/* MY STYLES FOR THE H2 --------------------------------------> */
+
+#quote-box h2 {
+  font-size: 3rem;
+  line-height: 2.5;
+  font-style: Italic;
+  text-align: center;
+}

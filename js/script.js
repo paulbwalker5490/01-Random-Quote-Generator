@@ -41,7 +41,7 @@ var quotes = [
 // Anonymous function used to make random quote from the quotes object.
 function getRandomQuote() {
 // Using the Math.random Method to generate the random numbers in the quotes array length 0 to 5.
-	makeRandomQuotes = Math.floor( Math.random() * quotes.length );
+	makeRandomQuotes = Math.floor( Math.random() * quotes.length ) + 1;
 // Assign the global variable and get the number that's generated and the object that's assigned to that number.
 	makeQuote = quotes[makeRandomQuotes];
 	return makeQuote;	
@@ -55,6 +55,8 @@ function printQuote(setBgColor) {
 	var getCitation = isThereCitation(printMakeQuote.citation);
 // If there is a year property with a year, it will display this variable.
 	var getYear = isThereYear(printMakeQuote.year);
+
+	var getTags = getTagQuotes(printMakeQuote.tag);
 // Anonymous function to be used if object propery year is in the quote.
 	function isThereYear(objectProp) {	
 		if ( objectProp !== undefined ) {
@@ -71,20 +73,30 @@ function printQuote(setBgColor) {
 			return '';
 		}		
 	}
+
+	function getTagQuotes(objectProp) {
+		if ( objectProp !== undefined ) {
+			return '<h2>' + objectProp + '</2>';
+		} else {
+			return '';
+		}
+		
+	}
+
  
 // Return this code to the .addEventListener when the button is clicked
-	document.getElementById('quote-box').innerHTML = '<p class="quote">' + printMakeQuote.quote + '</p>'
+	document.getElementById('quote-box').innerHTML = getTags + '<p class="quote">' + printMakeQuote.quote + '</p>'
     + '<p class="source">' + printMakeQuote.source + getCitation + getYear + '</p>';	
 
 
      function bgColor() {
      	var colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
-    	var getRandomColor = Math.floor( Math.random() * colors.length );
+    	var getRandomColor = Math.floor( Math.random() * colors.length ) + 1;
     	var makeColor = colors[getRandomColor];
     	return document.body.style.backgroundColor = makeColor;
     } 
 
- 	setInterval(bgColor, 5000);
+ 	setInterval(bgColor, 30000);
 };
 
 
@@ -93,6 +105,6 @@ function printQuote(setBgColor) {
 
 
 // Display different quote every 3 seconds
-setInterval(printQuote, 5000);
+setInterval(printQuote, 30000);
 
 
