@@ -9,7 +9,7 @@ var quotes = [
 				source: 	"Alfonso Bedoya",
 				citation:   "The Treasure of the Sierra Madre",
 				year: 		1948,
-				tag:        "Movie: Action",   
+				tag:        "Movie: Action"   
 			},
 			{ 	quote: 		"All the world's a stage, and all the men and women merely players.",
 				source: 	"William Shakespeare",
@@ -18,22 +18,22 @@ var quotes = [
 			},
 			{ 	quote: 		"The worst loneliness is not to be comfortable with yourself.",
 				source: 	"Mark Twain",
-				tag:		"Famous Author",   
+				tag:		"Famous Author"  
 			},
 			{ 	quote: 		"Success is not final; failure is not fatal: It is the courage to continue that counts.",
 				source: 	"Winston S. Churchill",
-  				tag:		"Famous Politician",   
+  				tag:		"Famous Politician"   
 			},
 			{ 	quote: 		"That's what I love most about writers--they're such lousy actors.",
 				source: 	"Vincent H. O'Neil",
 				citation:   "Death Troupe",
-				tag:        "Actors",   
+				tag:        "Actors"   
 			},
 			{ 	quote: 		"Life moves pretty fast. You don't stop and look around once in a while, you could miss it.",
 				source: 	"Matthew Broderick",
 				citation:   "Ferris Bueller",
 				year: 		1986,
-				tag:        "Movie: Comedy",   
+				tag:        "Movie: Comedy"   
 			}
 ];
 
