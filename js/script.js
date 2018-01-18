@@ -1,9 +1,5 @@
-// Define variable to hold the value of the array
+// Define variable to hold the value of the array in the global scope
 var makeRandomQuotes = 0;
-var makeQuote;
-var colors;
-var getRandomColor;
-var makeColor;
 // Assign quotes to an array of objects
 var quotes = [
 	
@@ -45,23 +41,23 @@ function getRandomQuote() {
 // Using the Math.random Method to generate the random numbers in the quotes array length 0 to 5.
 	makeRandomQuotes = Math.floor( Math.random() * quotes.length );
 // Assign the global variable and get the number that's generated and the object that's assigned to that number.
-	makeQuote = quotes[makeRandomQuotes];
+	var makeQuote = quotes[makeRandomQuotes];
 	
 	return makeQuote;	
 }
 
 function bgColor() {
-	colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
-	getRandomColor = Math.floor( Math.random() * colors.length );
-	makeColor = colors[getRandomColor];
+	var colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
+	var getRandomColor = Math.floor( Math.random() * colors.length );
+	var makeColor = colors[getRandomColor];
 	
 	return document.body.style.backgroundColor = makeColor;
 } 
 
-function printQuote(setBgColor) { 
+function printQuote() { 
 // Assign local variable that getRandomQuote() function when its called.
 	var printMakeQuote = getRandomQuote();
-
+// Assign local variable that getRandomQuote() function when its called.
 	var bgRandomColor = bgColor();
 // If there is a citation property on the quotes property it will display this variable.
 	var getCitation = isThereCitation(printMakeQuote.citation);
