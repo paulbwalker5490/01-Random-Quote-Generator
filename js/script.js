@@ -41,7 +41,7 @@ var quotes = [
 // Anonymous function used to make random quote from the quotes object.
 function getRandomQuote() {
 // Using the Math.random Method to generate the random numbers in the quotes array length 0 to 5.
-	makeRandomQuotes = Math.floor( Math.random() * quotes.length ) + 1;
+	makeRandomQuotes = Math.floor( Math.random() * quotes.length );
 // Assign the global variable and get the number that's generated and the object that's assigned to that number.
 	makeQuote = quotes[makeRandomQuotes];
 	return makeQuote;	
@@ -91,7 +91,7 @@ function printQuote(setBgColor) {
 
      function bgColor() {
      	var colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
-    	var getRandomColor = Math.floor( Math.random() * colors.length ) + 1;
+    	var getRandomColor = Math.floor( Math.random() * colors.length );
     	var makeColor = colors[getRandomColor];
     	return document.body.style.backgroundColor = makeColor;
     } 
