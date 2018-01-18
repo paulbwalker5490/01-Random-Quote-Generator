@@ -1,7 +1,9 @@
 // Define variable to hold the value of the array
 var makeRandomQuotes = 0;
 var makeQuote;
-
+var colors;
+var getRandomColor;
+var makeColor;
 // Assign quotes to an array of objects
 var quotes = [
 	
@@ -44,13 +46,23 @@ function getRandomQuote() {
 	makeRandomQuotes = Math.floor( Math.random() * quotes.length );
 // Assign the global variable and get the number that's generated and the object that's assigned to that number.
 	makeQuote = quotes[makeRandomQuotes];
+	
 	return makeQuote;	
 }
 
+function bgColor() {
+	colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
+	getRandomColor = Math.floor( Math.random() * colors.length );
+	makeColor = colors[getRandomColor];
+	
+	return document.body.style.backgroundColor = makeColor;
+} 
 
 function printQuote(setBgColor) { 
 // Assign local variable that getRandomQuote() function when its called.
 	var printMakeQuote = getRandomQuote();
+
+	var bgRandomColor = bgColor();
 // If there is a citation property on the quotes property it will display this variable.
 	var getCitation = isThereCitation(printMakeQuote.citation);
 // If there is a year property with a year, it will display this variable.
@@ -88,15 +100,6 @@ function printQuote(setBgColor) {
 	document.getElementById('quote-box').innerHTML = getTags + '<p class="quote">' + printMakeQuote.quote + '</p>'
     + '<p class="source">' + printMakeQuote.source + getCitation + getYear + '</p>';	
 
-
-     function bgColor() {
-     	var colors = [ 'maroon','blue', 'orange', 'teal', 'gray', 'purple' ];
-    	var getRandomColor = Math.floor( Math.random() * colors.length );
-    	var makeColor = colors[getRandomColor];
-    	return document.body.style.backgroundColor = makeColor;
-    } 
-
- 	setInterval(bgColor, 30000);
 };
 
 
@@ -104,7 +107,5 @@ function printQuote(setBgColor) {
  document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-// Display different quote every 3 seconds
-setInterval(printQuote, 30000);
 
 
