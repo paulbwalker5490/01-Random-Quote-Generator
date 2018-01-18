@@ -98,3 +98,6 @@ body {
   font-style: Italic;
   text-align: center;
 }
+#loadQuote {
+   background-color: rgba(57,172,73, 0);
+}
